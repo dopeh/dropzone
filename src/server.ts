@@ -24,6 +24,9 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
   // TODO: branch the response based on what the file actually is.
   // TODO: build a preview appropriate to the file type (thumbnail, snippet, ...).
   // TODO: make sure one bad/corrupt file can't take down the whole request.
+  // TODO: limit the upload size (e.g. 50 MB) and return a clear JSON error when it's exceeded.
+  // TODO: errors should always come back as JSON.
+
   res.json({
     declared_name: file.originalname,
     declared_type: file.mimetype,
